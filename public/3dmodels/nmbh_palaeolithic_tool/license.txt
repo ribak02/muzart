@@ -1,0 +1,11 @@
+Model Information:
+* title:	NMB&H, Palaeolithic tool
+* source:	https://sketchfab.com/3d-models/nmbh-palaeolithic-tool-45651b91cda14dc2aeec5ffb89e33cb5
+* author:	Global Digital Heritage (https://sketchfab.com/GlobalDigitalHeritage)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "NMB&H, Palaeolithic tool" (https://sketchfab.com/3d-models/nmbh-palaeolithic-tool-45651b91cda14dc2aeec5ffb89e33cb5) by Global Digital Heritage (https://sketchfab.com/GlobalDigitalHeritage) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
