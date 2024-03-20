@@ -5,9 +5,10 @@ interface Item {
   id: number
   name: string
   description: string
-  imageSrc: string
-  imageAlt: string
-  href: string
+  model: string
+  imgSrc: string
+  tags: string[]
+  source: string
 }
 
 export async function GET(
