@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon, UserCircleIcon } from '@heroicons/react/24/solid'
-import Button from '../Buttons/Button'
+import ConnectWallet from '../Web3/ConnectWallet'
 
 interface NavbarProps {
   onSearch: (value: string) => void // Function to handle search input
@@ -58,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
               </div>
             </div>
             <div className="flex-shrink-0">
-              <Button text="Connect" />
+              <ConnectWallet />
             </div>
           </div>
         </div>

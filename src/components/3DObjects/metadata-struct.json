@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "name": "The Ancient Artifact",
+  "description": "A rare 3D artifact representing the ancient civilizations of the digital realm. Created with intricate detail, it symbolizes the unification of past and future technologies.",
+  "author": "Jane Doe",
+  "group": "Northern Heritage Network",
+  "modelSrc": "ipfs://bafybeibd.../artifact-3d-model.gltf",
+  "imgSrc": "ipfs://bafybeihz.../artifact-thumbnail.jpg",
+  "tags": ["ancient", "digital", "artifact", "3D"],
+  "source": "https://yourwebsite.com/nft/the-ancient-artifact"
+}
