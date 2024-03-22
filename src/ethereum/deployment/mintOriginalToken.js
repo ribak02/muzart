@@ -8,7 +8,7 @@ const contractAddress = '0xB4d287F47D7a27D575033328e5975c1a4Fc46AD3'
 // Define the metadata.json IPFS URL
 // Update this based on each token's metadata ipfs url
 const tokenURI =
-  'ipfs://bafkreifxsjyfclfyp6mdul5h43qp5kbjec6nbublkt3trg222zge4s452u'
+  'ipfs://bafkreiewiplcvqiatpwkvxmj7vleblcq6nazjdbwzgth4enfzggjlzg6lm'
 
 // Async function to mint original token
 async function mintOriginal() {

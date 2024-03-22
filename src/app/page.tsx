@@ -1,37 +1,27 @@
 'use client'
 import SwiperView from '../components/Swiper/SwiperView'
-// import { Item } from '../components/ItemCard/ItemCard'
 import { useArtworks } from '../context/ArtworkContext'
-
-// import { artworks } from './api/data'
 import Navbar from '../components/NavBar/NavBar'
-import { getOriginalNFTMetadata } from '../ethereum/deployment/muzartArtifactService'
-import { useEffect } from 'react'
 
 export default function Home() {
-  const { artworks, setArtworks } = useArtworks()
-  // const [artworks, setArtworks] = useState<Item[]>([])
+  const { artworks } = useArtworks()
+  const title = 'NFT Digital Heritage Artifacts'
 
-  useEffect(() => {
-    async function fetchArtworks() {
-      const response = await getOriginalNFTMetadata()
-      setArtworks(response)
-    }
-    fetchArtworks()
-  }, [])
-
-  const handleSearch = (value: string) => {
-    console.log(value) // Perform search operation
-  }
+  // const handleSearch = (value: string) => {
+  //   console.log(value) // Perform search operation
+  //   handleSearch(value)
+  // }
   return (
-    <>
-      <Navbar onSearch={handleSearch} />
-      <div className="bg-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SwiperView title="Artworks" items={artworks} gridCols={3} />
-          {/* <SwiperView title="Collections" items={collections} gridCols={5} /> */}
+    <div className="h-screen bg-gray-100">
+      {/* <Navbar onSearch={handleSearch} /> */}
+      <Navbar />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32">
+        <div className="flex justify-left items-center">
+          <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
         </div>
+        <SwiperView title="Artworks" items={artworks} gridCols={3} />
+        {/* <SwiperView title="Collections" items={collections} gridCols={5} /> */}
       </div>
-    </>
+    </div>
   )
 }

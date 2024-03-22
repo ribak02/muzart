@@ -3,8 +3,9 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 
 import { ArtworkProvider } from '../context/ArtworkContext'
+import { WalletProvider } from '../context/WalletContext'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,10 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ArtworkProvider>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-    </ArtworkProvider>
+    <WalletProvider>
+      <ArtworkProvider>
+        <html lang="en">
+          <body className={inter.className}>{children}</body>
+        </html>
+      </ArtworkProvider>
+    </WalletProvider>
   )
 }

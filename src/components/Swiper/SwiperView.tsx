@@ -24,7 +24,6 @@ export default function SwiperView(props: {
 
   return (
     <div className="max-w-2xl sm:pt-3 lg:max-w-none">
-      <h2 className="text-2xl font-bold text-gray-900">{props.title}</h2>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}

@@ -28,7 +28,7 @@ async function fetchMetadata(uri) {
     const response = await fetch(normalizedUri)
     if (!response.ok) throw new Error('Network response was not ok')
     const metadata = await response.json()
-    console.log('Fetched metadata using contract')
+    console.log('Fetched metadata from ipfs using smart contract')
     return metadata
   } catch (error) {
     console.error('Error fetching metadata:', error)
@@ -38,6 +38,7 @@ async function fetchMetadata(uri) {
 
 export async function getOriginalNFTMetadata() {
   const totalSupply = await muzartArtifactContract.getCurrentTokenId()
+  console.log('Total supply:', totalSupply)
   const metadataPromises = []
 
   for (let tokenId = 0; tokenId < totalSupply; tokenId++) {

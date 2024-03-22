@@ -1,40 +1,40 @@
-// context/ArtworkContext.js
 'use client'
-import React, {
-  createContext,
-  useState,
-  useContext,
-  ReactNode,
-  useEffect,
-} from 'react'
-import { Item } from '../components/ItemCard/ItemCard'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 import { getOriginalNFTMetadata } from '../ethereum/deployment/muzartArtifactService'
+import { Item } from '../components/ItemCard/ItemCard'
 
-// Define the context type
 interface ArtworkContextType {
-  artworks: Item[] // Replace 'any' with your artwork data type
-  setArtworks: React.Dispatch<React.SetStateAction<any[]>>
+  artworks: Item[]
+  setArtworks: React.Dispatch<React.SetStateAction<Item[]>>
 }
 
-// Create the context with an undefined initial value
-const ArtworkContext = createContext<ArtworkContextType | undefined>(undefined)
+// Providing initial context value with a type assertion
+const ArtworkContext = createContext<ArtworkContextType>(
+  {} as ArtworkContextType
+)
 
-// Create a provider component
-export const ArtworkProvider = ({ children }: { children: ReactNode }) => {
-  const [artworks, setArtworks] = useState<Item[]>([]) // Again, replace 'any' with your actual data type
+interface ArtworkProviderProps {
+  children: React.ReactNode
+}
 
-  // In your ArtworkContext provider
+export const ArtworkProvider: React.FC<ArtworkProviderProps> = ({
+  children,
+}) => {
+  const [artworks, setArtworks] = useState<Item[]>([])
+
   useEffect(() => {
-    // Attempt to load cached artworks
-    const cachedArtworks = localStorage.getItem('artworks')
-    if (cachedArtworks) {
-      setArtworks(JSON.parse(cachedArtworks))
-    } else {
-      getOriginalNFTMetadata().then((data) => {
-        setArtworks(data)
-        localStorage.setItem('artworks', JSON.stringify(data))
-      })
+    const loadArtworks = async () => {
+      const cachedArtworks = localStorage.getItem('artworks')
+      if (cachedArtworks) {
+        setArtworks(JSON.parse(cachedArtworks))
+      } else {
+        const fetchedArtworks = await getOriginalNFTMetadata()
+        setArtworks(fetchedArtworks)
+        localStorage.setItem('artworks', JSON.stringify(fetchedArtworks))
+      }
     }
+
+    loadArtworks()
   }, [])
 
   return (
@@ -44,14 +44,4 @@ export const ArtworkProvider = ({ children }: { children: ReactNode }) => {
   )
 }
 
-// Custom hook for easy context consumption
-export const useArtworks = () => {
-  const context = useContext(ArtworkContext)
-  if (context === undefined) {
-    throw new Error('useArtworks must be used within an ArtworkProvider')
-  }
-  return context
-}
-
-// Exporting ArtworkContext directly if needed for TypeScript interfaces
-export { ArtworkContext }
+export const useArtworks = (): ArtworkContextType => useContext(ArtworkContext)
