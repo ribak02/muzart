@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\berge\\Documents\\StA\\CS4099\\Muzart\\muzart-app\\src\\ethereum\\contracts\\MuzartArtifact.sol": {
-      "lastModificationDate": 1710874056389,
-      "contentHash": "c088a6fd52ceaa30b39292310fa188d4",
+      "lastModificationDate": 1711301560555,
+      "contentHash": "12aa18d9db821c8676362380c1aaf0e7",
       "sourceName": "contracts/MuzartArtifact.sol",
       "solcConfig": {
         "version": "0.8.20",

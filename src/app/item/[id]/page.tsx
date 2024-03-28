@@ -9,13 +9,9 @@ export default function Home({ params }: { params: { id: string } }) {
   const { artworks } = useArtworks()
   const item = artworks.find((artwork) => artwork.tokenId == id)
 
-  const handleSearch = (value: string) => {
-    console.log(value) // Perform search operation
-  }
-
   return (
     <div className="flex flex-col h-screen">
-      <Navbar onSearch={handleSearch} />
+      <Navbar />
       <div className="flex justify-center items-center">
         {item ? (
           <ItemInfo item={item} />

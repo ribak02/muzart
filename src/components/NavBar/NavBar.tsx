@@ -61,7 +61,10 @@ const Navbar: React.FC = () => {
                 placeholder="Search"
                 onChange={handleSearchChange}
               />
-              <button className="flex items-center justify-center px-4 ">
+              <button
+                aria-label="search button"
+                className="flex items-center justify-center px-4 "
+              >
                 <MagnifyingGlassIcon className="h-5 w-5 text-gray-500" />
               </button>
               {searchResults.length > 0 && (
@@ -82,7 +85,11 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex items-center gap-4">
             <div className="md:hidden">
-              <button className="flex items-center justify-center">
+              <button
+                type="button"
+                className="flex items-center justify-center"
+                aria-label="search button"
+              >
                 <MagnifyingGlassIcon className="h-6 w-6 text-gray-500" />
               </button>
             </div>

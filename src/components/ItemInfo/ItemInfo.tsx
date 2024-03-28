@@ -45,6 +45,7 @@ export function ItemInfo({ item }: { item: Item }) {
                   {item.name}
                 </h3>
               </div>
+              <p className="text-lg text-gray-900">By {item.author}</p>
               <p className="text-lg text-gray-500">{item.description}</p>
               <p className="text-lg text-black flex flex-wrap gap-2">
                 Tags:

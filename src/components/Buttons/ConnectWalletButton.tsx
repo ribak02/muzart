@@ -14,8 +14,11 @@ const ConnectWalletButton: React.FC = () => {
   const isConnected = Boolean(walletAddress)
 
   const connectWalletHandler = async () => {
+    console.log(window.ethereum)
     if (window.ethereum) {
       try {
+        // await window.ethereum.enable()
+
         const accounts: string[] = await window.ethereum.request({
           method: 'eth_requestAccounts',
         })

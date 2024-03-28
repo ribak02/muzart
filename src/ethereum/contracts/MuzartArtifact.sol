@@ -8,11 +8,10 @@ contract MuzartArtifact is ERC1155, AccessControl {
     uint256 private _tokenIdCounter;
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
-    // Removed unused Strings library and _baseURI variable as they're not used efficiently
 
     mapping(uint256 => string) private _tokenURIs;
 
-    // Events declaration simplified by removing indexed where not necessary for filtering
+    // Events declaration
     event OriginalMinted(address operator, uint256 tokenId, uint256 amount);
     event CopyMinted(address operator, uint256 tokenId, uint256 amount);
     event BaseURIChanged(string newBaseURI);
@@ -50,7 +49,6 @@ contract MuzartArtifact is ERC1155, AccessControl {
         return super.supportsInterface(interfaceId);
     }
 
-    // Simplified role management functions, unnecessary emit removed
     function grantMinterRole(address account) public onlyRole(DEFAULT_ADMIN_ROLE) {
         grantRole(MINTER_ROLE, account);
     }
