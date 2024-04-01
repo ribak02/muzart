@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 export interface Item {
   tokenId: string
@@ -12,7 +11,7 @@ export interface Item {
 }
 
 function getThumbnail(tokenId: string) {
-  return `/images/thumbnails/thumbnail${tokenId}.png`
+  return `/images/thumbnails/thumbnail${tokenId}.PNG`
 }
 
 export default function ItemCard({ item }: { item: Item }) {
@@ -20,17 +19,10 @@ export default function ItemCard({ item }: { item: Item }) {
     <div className="group relative mb-5">
       <div className="relative w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 aspect-w-1 aspect-h-1">
         <Link href={`/item/${item.tokenId}`} passHref>
-          {/* <img
+          <img
             src={getThumbnail(item.tokenId)}
             alt="thumbnail image"
             className="h-full w-full object-cover object-center"
-          /> */}
-          <Image
-            src={getThumbnail(item.tokenId)}
-            alt="thumbnail image"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
           />
         </Link>
       </div>
